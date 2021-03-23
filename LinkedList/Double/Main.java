@@ -27,40 +27,40 @@ public class Main {
             Scanner scn2= new Scanner(System.in);
             String str2= scn.nextLine();
             String[] str3= str2.split(" ");
-            if(dll.getNum_player()==1)
-            {
-                DLLNode dllNode= dll.showCurrent(Integer.parseInt(str3[0]));
-                System.out.println("Game Over : Player "+ dllNode.getPlayer()+ " wins!!");
-                break;
-            }
-            else if(str3[1].equals("F"))
+
+            if(str3[1].equals("F"))
             {
                 //print current sequence
                 DLLNode dllNode= dll.showCurrent(Integer.parseInt(str3[0]));
-                System.out.print("Game Over : Player "+  dllNode.getPlayer() + " is holding the pillow at t= "+ Integer.parseInt(str3[0])+ ", pillow passing sequence = Player " );
-                dll.printFirstToLast();
+                if(dll.getNum_player()==1)
+                    System.out.println("Game Over : Player "+ dllNode.getPlayer()+ " wins!!");
+                else
+                {
+                    System.out.print("Game Over : Player "+  dllNode.getPlayer() + " is holding the pillow at t= "+ Integer.parseInt(str3[0])+ ", pillow passing sequence = Player " );
+                    dll.printFirstToLast();
+                }
                 break;
             }
-            else if(str3[1].equals("M"))
+            else if(str3[1].equals("M") && dll.getNum_player()>1)
             {
                 //eliminate holder
                 //print who is eliminated
                 DLLNode dllNode= dll.remove(Integer.parseInt(str3[0]));
                 System.out.println("Player " + dllNode.getPlayer() + " has been eliminated at t= " +Integer.parseInt(str3[0]));
             }
-            else if(str3[1].equals("R"))
+            else if(str3[1].equals("R") && dll.getNum_player()>1)
             {
                 //Reverse direction
                 dll.reverseDirection(Integer.parseInt(str3[0]));
             }
-            else if(str3[1].equals("P"))
+            else if(str3[1].equals("P") && dll.getNum_player()>1)
             {
                 //print current holder
                 DLLNode dllNode= dll.showCurrent(Integer.parseInt(str3[0]));
                 System.out.println("Player "+  dllNode.getPlayer() + " is holding the pillow at t= "+ Integer.parseInt(str3[0]));
 
             }
-            else if(str3[1].equals("I"))
+            else if(str3[1].equals("I") && dll.getNum_player()>1)
             {
                 //add new node
                 c++;

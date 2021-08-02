@@ -1,8 +1,8 @@
 public class Array {
 
     private String str[];
-    private int arrsize;
-    private int listsize;
+    private int arrsize; //total space
+    private int listsize; //total filled
     private void resize()
     {
         String temp[]= new String[arrsize* 2];

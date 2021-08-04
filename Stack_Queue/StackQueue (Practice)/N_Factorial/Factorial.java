@@ -1,4 +1,4 @@
-package Fibonacci_of_n;
+package N_Factorial;
 
 import java.util.Scanner;
 

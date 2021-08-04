@@ -2,7 +2,7 @@ package Fibonacci_of_n;
 
 import java.util.Scanner;
 
-public class Fibonacci {
+public class Factorial{
     public static void main(String[] args) {
         StackofInts stackofInts= new StackofInts();
         Scanner scn= new Scanner(System.in);

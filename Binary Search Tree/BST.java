@@ -47,6 +47,8 @@ public class BST {
                 else
                     temp= temp.right;
             }
+            else
+                return;
 
 
         }
